@@ -49,4 +49,6 @@ public class ArmstrongNumber {
             System.out.println("Not arm strong number");
         }
     }
+
+
 }
