@@ -1,7 +1,6 @@
 package Arrays;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class SumOfArrays {
     public int getSumOfArrays(int []a){
@@ -72,6 +71,71 @@ public class SumOfArrays {
         }
         System.out.println("removed: "+removedElem);
         return list;
+    }
+
+    public void setTheValueAtPosition(int n,int arr[],int val,int pos){
+        // 5,{1,2,3,4,5},50,5
+        int [] newArray = new int[n+1];
+        for(int i=0; i < n+1; i++){
+            if(i < pos-1){
+                newArray[i] = arr[i];
+            }else if(i == pos-1){
+                newArray[i] = val;
+            }else{
+                newArray[i] = arr[i-1];
+            }
+        }
+        for(int i: newArray){
+            System.out.println(i);
+        }
+    }
+
+    public void getMaxAndMinVal(int [] arr){
+        // 10,20,30,40,50
+        int max = arr[0];
+        int min = arr[0];
+        for(int i=0; i< arr.length; i++){
+            if(arr[i] >= max){
+                max = arr[i];
+            }else if(min <= arr[i]){
+                min=arr[i];
+            }
+        }
+        System.out.println("Max: "+max+" "+"min: "+min);
+    }
+
+    public void getReverseArray(int [] arr){
+        List<Integer> k = new ArrayList<>();
+        for(int i = arr.length-1; i >= 0; i--){
+            k.add(arr[i]);
+        }
+        System.out.println(k.toString());
+    }
+
+    public void getDuplicateArrayValues(int [] arr){
+        for(int i=0; i < arr.length-1;i++){
+            for(int j=i+1; j < arr.length; j++){
+                if(arr[i] == arr[j] && (i != j)){
+                    System.out.println("Duplicate array: "+arr[j]+" ");
+                }
+            }
+        }
+    }
+
+    public void findCommonValues(String [] str1,String [] str2){
+        Set<String> set = new HashSet<>();
+
+        for(int i=0; i < str1.length; i++){
+            for(int j=0; j < str2.length; j++){
+                if(str1[i] == str2[j]){
+                    set.add(str1[i]);
+                    break;
+                }
+            }
+        }
+        for(String i: set){
+            System.out.println(Collections.singletonList(i));
+        }
     }
 
 }
