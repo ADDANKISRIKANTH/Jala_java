@@ -13,7 +13,10 @@ public class ArrayMaxAndMin {
             }
         }
         System.out.println("Max: "+max+" "+"Min: "+min);
+        int differ = max-min;
+        System.out.println("Difference between max and min: "+differ);
     }
+
 
     public static void main(String[] args) {
         int []arr = {10,20,30,40,50};
